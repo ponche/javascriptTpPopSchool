@@ -6,7 +6,9 @@ let baliseMessage = document.querySelector("#message") ;
 let baliseScore = document.querySelector("#score") ; 
 
 // declaration des variables 
-let numberMystere = Math.floor(Math.random() * 100 + 1) ; 
+// j'ai volonaire oublier le math floor, sinon c'est plus drole.
+// vous pouvez retourner dans le passé pour voir comment j'ai utiliser la Math.floor 
+let numberMystere = Math.random() * 100 + 1 ; 
 let numberUser ; 
 let compteurEssai = 0 ; 
 
@@ -40,7 +42,7 @@ baliseButtonReset.addEventListener("click", reset) ;
 function reset() 
 {
     compteurEssai = 0 ; 
-    numberMystere = Math.floor(Math.random() * 100 + 1) ; 
+    numberMystere = Math.random() * 100 + 1 ; 
     baliseInputUser.value = "" ; 
     baliseMessage.innerHTML = "" ; 
     baliseScore.innerHTML = "" ; 
