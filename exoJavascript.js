@@ -22,6 +22,7 @@ function createCellule(couleur) {
 
 
 function generatorDamier(row, column) {
+    reset() ; 
     // on creer les row 
     for (let i = 0; i < row; i++) {
         let divRow = document.createElement("div");
@@ -50,6 +51,11 @@ function generatorDamier(row, column) {
         }
 
     }
+}
+function reset()
+{
+    baliseSuperDamier.innerHTML = "" ; 
+
 }
 
 // ajout ecouteur evenemnt button 
