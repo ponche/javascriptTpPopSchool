@@ -10,13 +10,13 @@ var students = ["Alexandre","Béatrice","Benoît","Émeric","Florian","Gwenaëll
 function updateListe()
 {
     // effacement de la liste student 
-    baliseListeStudents = "" ; 
+    baliseListeStudents.innerHTML = "" ; 
 
     // tri des eleves par ordre aphanumérique 
     students.sort() ; 
 
     // ajout des balise student
-    for(let i = 0 ; i < students ; i++) 
+    for(let i = 0 ; i < students.length ; i++) 
     {
         // utilisation de la for, car besoin de connaitre id 
         let baliseStudent = createElementStudent(students[i], i) ; 
@@ -25,7 +25,7 @@ function updateListe()
 }
 
 // create balise student 
-function createElementStudent(prenom, id) ; 
+function createElementStudent(prenom, id) 
 {
     let divStudent = document.createElement("div") ; 
     divStudent.id = id  ; 
@@ -46,6 +46,7 @@ function createElementStudent(prenom, id) ;
     divButtonChange.id = "c" + id ;  
 
     // assemblage de la balise student 
+    divStudent.appendChild(divInput) ; 
     divStudent.appendChild(divButtonChange); 
     divStudent.appendChild(divButtonDelete); 
 
@@ -53,3 +54,18 @@ function createElementStudent(prenom, id) ;
     return divStudent ; 
 
 }
+
+// on met un ecouteur d'evenement sur le bouton add student 
+baliseButtonNewStudent.addEventListener("click", function(){
+    // click sur le bouton add student 
+
+    students.push(baliseInputNewStudent.value) ; 
+    baliseInputNewStudent.value = "" ; 
+    updateListe() ; 
+}) ; 
+
+// on met un mega ecouteur qui va écouter la liste student 
+baliseListeStudents.addEventListener("click", function(){
+    // mon mega ecouteur 
+    console.log("click sur la liste") ; 
+})
