@@ -8,6 +8,7 @@ let bigBen = new Date ;
 function ticTac()
 {
     // se code sera executer tous les secondes 
+    bigBen = new Date ; 
     console.log("tic tac") ; 
     baliseBigBen.innerHTML = bigBen.getHours() + " : " + bigBen.getMinutes() ;  
 }
