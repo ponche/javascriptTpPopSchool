@@ -34,6 +34,7 @@ function createElementStudent(prenom, id)
     let divInput = document.createElement("input"); 
     divInput.value = prenom ; 
     divInput.placeholder = prenom ; 
+    divInput.id = "i" + id ; 
 
     // creation button delete
     let divButtonDelete = document.createElement("button") ; 
@@ -64,8 +65,49 @@ baliseButtonNewStudent.addEventListener("click", function(){
     updateListe() ; 
 }) ; 
 
-// on met un mega ecouteur qui va écouter la liste student 
-baliseListeStudents.addEventListener("click", function(){
+// on met un mega ecouteur qui va écouter la liste students
+baliseListeStudents.addEventListener("click", function(e){
     // mon mega ecouteur 
     console.log("click sur la liste") ; 
-})
+    if(e.target.id != "undefined")
+    {
+        // on peut continuer, il contient au moins une valeur 
+        if(e.target.id[0] == "c")
+        {
+            // on execute le code pour le changement de nom 
+            console.log("button change") ; 
+            let idArray = getIndexArray(e.target.id); 
+            // on recupere input 
+            let baliseInput = document.querySelector("#i" + idArray) ; 
+            // on met a jour le tableau 
+            students[idArray] = baliseInput.value ; 
+            // on met a jour tous le tableau 
+            updateListe() ; 
+        }
+        else if(e.target.id[0] == "d")
+        {
+            // on execute le code pour la suppresion 
+            console.log("button delete") ; 
+            let idArray = getIndexArray(e.target.id); 
+            // on supprime item dans le tebleau 
+            students.splice(idArray, 1) ; 
+            // on met a jour tous le tableau 
+            updateListe() ; 
+        }
+        else 
+        {
+            // click dans le néant 
+            console.log("click dans le vide") ; 
+        }
+    }
+
+}); 
+
+// mise a jour de la liste 
+updateListe() ; 
+
+// function recuperation id via la class 
+function getIndexArray(idClass)
+{
+    return parseInt(idClass.slice(1)) ;
+}
