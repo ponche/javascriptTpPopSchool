@@ -1,15 +1,15 @@
 .cellule
 {
-    width: 10px ;
-    height: 10px ;
+    width: 50px ;
+    height: 50px ;
 }
 .black
 {
     background-color: black ; 
 }
-.white
+.red
 {
-    background-color: white ; 
+    background-color: red ; 
 }
 .row
 {

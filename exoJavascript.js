@@ -14,8 +14,8 @@ function createCellule(couleur) {
     cellule.classList.add("cellule");
     if (couleur == "black")
         cellule.classList.add("black");
-    if (couleur == "white")
-        cellule.classList.add("white");
+    if (couleur == "red")
+        cellule.classList.add("red");
 
     return cellule
 }
@@ -41,7 +41,7 @@ function generatorDamier(row, column) {
                 divCellule.classList.add("black");
             }
             else {
-                divCellule.classList.add("white");
+                divCellule.classList.add("red");
             }
             divRow.appendChild(divCellule);
             // ajout dans le tableau 
