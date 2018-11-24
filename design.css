@@ -1,7 +1,8 @@
 .cellule
-{
-    width: 50px ;
-    height: 50px ;
+{   
+    --sizeCellule : 50px ; 
+    width: var(--sizeCellule) ;
+    height: var(--sizeCellule)  ;
 }
 .black
 {
