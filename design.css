@@ -23,8 +23,6 @@
     /* declaraton des variable */ 
     --nbRow: 10  ;  
     --sizeDamier: 500px ;
-    --sizeBox: var(--sizeDamier) / var(--sizeBox) ;
-    grid-template: repeat(10, 50px) / repeat(10, 50px) ; 
-
-     
+    --sizeBox: calc(var(--sizeDamier) / var(--nbRow)) ;
+    grid-template: repeat(var(--nbRow), var(--sizeBox)) / repeat(var(--nbRow), var(--sizeBox)) ; 
 }
