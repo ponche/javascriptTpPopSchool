@@ -89,10 +89,15 @@ baliseListeStudents.addEventListener("click", function(e){
             // on execute le code pour la suppresion 
             console.log("button delete") ; 
             let idArray = getIndexArray(e.target.id); 
-            // on supprime item dans le tebleau 
-            students.splice(idArray, 1) ; 
-            // on met a jour tous le tableau 
-            updateListe() ; 
+            // demande de confirmation 
+            if(confirm("Voulez vous supprimer " + students[idArray]))
+            {
+                // on supprime item dans le tebleau 
+                students.splice(idArray, 1) ; 
+                // on met a jour tous le tableau 
+                updateListe() ;    
+            }
+             
         }
         else 
         {
