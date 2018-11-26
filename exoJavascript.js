@@ -62,6 +62,10 @@ function reset()
 baliseButtonGenerator.addEventListener("click", function(){
     let nombreRow = parseInt(baliseInputRow.value)  ; 
     let nombreColumn = parseInt(baliseInputColumn.value)  ;
-    generatorDamier(nombreRow, nombreColumn) ; 
+    generatorDamier(nombreRow, nombreRow) ; 
+
+    // modif CSS 
+    baliseSuperDamier.style.setProperty("--nbRow", nombreRow) ; 
+    baliseSuperDamier.style.setProperty("--sizeDamier", nombreColumn + "px") ; 
 
 }); 
