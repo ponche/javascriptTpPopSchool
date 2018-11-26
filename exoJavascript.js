@@ -27,7 +27,7 @@ function generatorDamier(row, column) {
     for (let i = 0; i < row; i++) {
         let divRow = document.createElement("div");
         divRow.classList.add("row");
-        baliseSuperDamier.appendChild(divRow);
+        //baliseSuperDamier.appendChild(divRow);
         // damier.push(baliseSuperDamier);
         let rowEven = i % 2;
 
@@ -43,7 +43,7 @@ function generatorDamier(row, column) {
             else {
                 divCellule.classList.add("red");
             }
-            divRow.appendChild(divCellule);
+            baliseSuperDamier.appendChild(divCellule);
             // ajout dans le tableau 
             // damier[i].push(divCellule) ; 
 

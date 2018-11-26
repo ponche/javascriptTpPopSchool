@@ -1,8 +1,8 @@
 .cellule
 {   
-    --sizeCellule : 50px ; 
+    /*--sizeCellule : 50px ; 
     width: var(--sizeCellule) ;
-    height: var(--sizeCellule)  ;
+    height: var(--sizeCellule)  ;*/
 }
 .black
 {
@@ -19,6 +19,12 @@
 }
 #superDamier
 {
-    display: flex ; 
-    flex-direction: column ; 
+    display: grid ; 
+    /* declaraton des variable */ 
+    --nbRow: 10  ;  
+    --sizeDamier: 500px ;
+    --sizeBox: var(--sizeDamier) / var(--sizeBox) ;
+    grid-template: repeat(10, 50px) / repeat(10, 50px) ; 
+
+     
 }
