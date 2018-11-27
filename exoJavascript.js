@@ -1,7 +1,20 @@
 // declaration des balises 
 let baliseInputNewStudent = document.querySelector("#newStudent") ; 
 let baliseButtonNewStudent = document.querySelector("#buttonNewStudent") ; 
-let baliseListeStudents = document.querySelector("#listeStudents")
+let baliseListeStudents = document.querySelector("#listeStudents"); 
+
+// mon objet liste 
+let listeJson ; 
+
+// des ligne obscure 
+var myImage = document.querySelector("#myImage");
+fetch("http://api-students.popschool-lens.fr/students.json")
+    .then(response => response.json())
+    .then(function (myJson) {
+        listeJson = myJson ; 
+    });
+
+
 
 // liste des eleves 
 var students = ["Alexandre","Béatrice","Benoît","Émeric","Florian","Gwenaëlle","Jérémy","Johan","Justine M","Justine P","Justine T","Kévin","Loïc","Mathieu","Matthias","Rémi","Samuel","Sébastien","Sullivan","Thomas","Tiffany","Valentin","Yann"];
