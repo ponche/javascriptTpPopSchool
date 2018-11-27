@@ -8,7 +8,6 @@ let listeStudent = {};
 let students = [] ; 
 
 // des ligne obscure 
-var myImage = document.querySelector("#myImage");
 fetch("http://api-students.popschool-lens.fr/students.json")
     .then(response => response.json())
     .then(function (myJson) {
@@ -18,9 +17,6 @@ fetch("http://api-students.popschool-lens.fr/students.json")
             updateListe() ; 
         });
     });
-
-
-// le reste du code parcours un array students 
 
 // update liste 
 function updateListe()
@@ -35,7 +31,6 @@ function updateListe()
     for(let i = 0 ; i < listeStudent.students.length ; i++) 
     {
         // utilisation de la for, car besoin de connaitre id 
-        console.log("boucle : " + i ) ; 
         let baliseStudent = createElementStudent( listeStudent.students[i].firstname , i) ; 
         baliseListeStudents.appendChild(baliseStudent) ; 
     }
@@ -70,7 +65,6 @@ function createElementStudent(prenom, id)
 
     // on renvoie la balise en return ( le dino pond oeuf ) 
     return divStudent ; 
-
 }
 
 // on met un ecouteur d'evenement sur le bouton add student 
@@ -113,8 +107,7 @@ baliseListeStudents.addEventListener("click", function(e){
                 listeStudent.students.splice(idArray, 1) ; 
                 // on met a jour tous le tableau 
                 updateListe() ;    
-            }
-             
+            }   
         }
         else 
         {
@@ -122,11 +115,7 @@ baliseListeStudents.addEventListener("click", function(e){
             console.log("click dans le vide") ; 
         }
     }
-
 }); 
-
-// mise a jour de la liste 
-//updateListe() ; 
 
 // function recuperation id via la class 
 function getIndexArray(idClass)
