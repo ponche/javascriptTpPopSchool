@@ -77,7 +77,7 @@ function createElementStudent(prenom, id)
 baliseButtonNewStudent.addEventListener("click", function(){
     // click sur le bouton add student 
 
-    students.push(baliseInputNewStudent.value) ; 
+    listeStudent.students.push({firstname : baliseInputNewStudent.value, lastname: "Sans famille", sex: "X"}) ; 
     baliseInputNewStudent.value = "" ; 
     updateListe() ; 
 }) ; 
@@ -97,7 +97,7 @@ baliseListeStudents.addEventListener("click", function(e){
             // on recupere input 
             let baliseInput = document.querySelector("#i" + idArray) ; 
             // on met a jour le tableau 
-            students[idArray] = baliseInput.value ; 
+            listeStudent.students[idArray].firstname = baliseInput.value ; 
             // on met a jour tous le tableau 
             updateListe() ; 
         }
@@ -107,10 +107,10 @@ baliseListeStudents.addEventListener("click", function(e){
             console.log("button delete") ; 
             let idArray = getIndexArray(e.target.id); 
             // demande de confirmation 
-            if(confirm("Voulez vous supprimer " + students[idArray]))
+            if(confirm("Voulez vous supprimer " + listeStudent.students[idArray].firstname))
             {
                 // on supprime item dans le tebleau 
-                students.splice(idArray, 1) ; 
+                listeStudent.students.splice(idArray, 1) ; 
                 // on met a jour tous le tableau 
                 updateListe() ;    
             }
