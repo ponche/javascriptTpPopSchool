@@ -29,7 +29,7 @@ function createElementStudent(prenom, id)
 {
     let divStudent = document.createElement("div") ; 
     divStudent.id = id  ; 
-    
+    divStudent.classList.add("student") ;  
     // creation de input 
     let divInput = document.createElement("input"); 
     divInput.value = prenom ; 
@@ -40,11 +40,12 @@ function createElementStudent(prenom, id)
     let divButtonDelete = document.createElement("button") ; 
     divButtonDelete.innerHTML = "Delete Student" ; 
     divButtonDelete.id = "d" + id ; 
-    
+    divButtonDelete.classList.add("buttonDelete") ;  
     // creation button change prenom
     let divButtonChange = document.createElement("button") ;
     divButtonChange.innerHTML = "Change Prenom" ; 
     divButtonChange.id = "c" + id ;  
+    divButtonChange.classList.add("buttonChange") ; 
 
     // assemblage de la balise student 
     divStudent.appendChild(divInput) ; 

@@ -1,0 +1,25 @@
+button
+{
+    margin: 5px ; 
+    border-radius: 5px ; 
+    height: 30px ;
+    font-weight: bold ; 
+}
+.buttonDelete
+{
+    background-color: red ; 
+    color: white ; 
+}
+.buttonChange
+{
+    background-color: aqua; 
+}
+#areaAddStudent
+{
+    margin-bottom: 50px ; 
+    /* border: solid red 2px ;  */
+}
+.student
+{
+    margin: 10px ;  
+}
